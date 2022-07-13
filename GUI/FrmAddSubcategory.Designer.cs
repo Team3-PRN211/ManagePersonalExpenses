@@ -69,15 +69,15 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(505, 94);
+            this.label4.Location = new System.Drawing.Point(443, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 20);
+            this.label4.Size = new System.Drawing.Size(137, 20);
             this.label4.TabIndex = 3;
-            this.label4.Text = "CategoryID";
+            this.label4.Text = "CategoryName";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(238, 318);
+            this.btnAdd.Location = new System.Drawing.Point(272, 271);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 29);
             this.btnAdd.TabIndex = 4;
@@ -87,7 +87,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(531, 325);
+            this.btnCancel.Location = new System.Drawing.Point(532, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 29);
             this.btnCancel.TabIndex = 5;
@@ -115,15 +115,15 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(321, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(283, 41);
+            this.label1.Size = new System.Drawing.Size(265, 41);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Add a Subcategory";
+            this.label1.Text = "Add  Subcategory";
             // 
             // cbCate
             // 
             this.cbCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCate.FormattingEnabled = true;
-            this.cbCate.Location = new System.Drawing.Point(636, 94);
+            this.cbCate.Location = new System.Drawing.Point(619, 94);
             this.cbCate.Name = "cbCate";
             this.cbCate.Size = new System.Drawing.Size(151, 28);
             this.cbCate.TabIndex = 10;

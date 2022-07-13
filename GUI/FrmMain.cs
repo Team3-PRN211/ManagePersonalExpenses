@@ -26,14 +26,20 @@ namespace GUI
 
         private void subCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmCategories frmCategories  = new FrmCategories();
-            frmCategories.Show();
+            FrmSubcategory frm  = new FrmSubcategory();
+            frm.Show();
         }
 
         private void staticToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Report report = new Report();
             report.Show();
+        }
+
+        private void profileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProfile frmProfile = new FrmProfile();
+            frmProfile.Show();
         }
     }
 }

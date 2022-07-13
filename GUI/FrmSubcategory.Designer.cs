@@ -37,12 +37,12 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDes = new System.Windows.Forms.TextBox();
-            this.txtCateID = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.cbCate = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(327, 28);
+            this.label1.Location = new System.Drawing.Point(205, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(379, 33);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(50, 96);
+            this.label2.Location = new System.Drawing.Point(23, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 20);
             this.label2.TabIndex = 1;
@@ -71,7 +71,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(79, 179);
+            this.label3.Location = new System.Drawing.Point(23, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(503, 93);
+            this.label4.Location = new System.Drawing.Point(388, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 20);
             this.label4.TabIndex = 3;
@@ -92,54 +92,47 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(503, 179);
+            this.label5.Location = new System.Drawing.Point(388, 176);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 20);
+            this.label5.Size = new System.Drawing.Size(87, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "CategoryID";
+            this.label5.Text = "Category";
             // 
             // dgView
             // 
             this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView.Location = new System.Drawing.Point(95, 266);
+            this.dgView.Location = new System.Drawing.Point(12, 277);
             this.dgView.Name = "dgView";
             this.dgView.RowHeadersWidth = 51;
             this.dgView.RowTemplate.Height = 29;
-            this.dgView.Size = new System.Drawing.Size(823, 188);
+            this.dgView.Size = new System.Drawing.Size(698, 226);
             this.dgView.TabIndex = 5;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(205, 93);
+            this.txtID.Location = new System.Drawing.Point(175, 93);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(165, 27);
             this.txtID.TabIndex = 6;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(205, 176);
+            this.txtName.Location = new System.Drawing.Point(175, 172);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(165, 27);
             this.txtName.TabIndex = 7;
             // 
             // txtDes
             // 
-            this.txtDes.Location = new System.Drawing.Point(631, 90);
+            this.txtDes.Location = new System.Drawing.Point(530, 87);
             this.txtDes.Name = "txtDes";
             this.txtDes.Size = new System.Drawing.Size(180, 27);
             this.txtDes.TabIndex = 8;
             this.txtDes.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // txtCateID
-            // 
-            this.txtCateID.Location = new System.Drawing.Point(631, 176);
-            this.txtCateID.Name = "txtCateID";
-            this.txtCateID.Size = new System.Drawing.Size(180, 27);
-            this.txtCateID.TabIndex = 9;
-            // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(276, 510);
+            this.btnInsert.Location = new System.Drawing.Point(205, 532);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(94, 29);
             this.btnInsert.TabIndex = 10;
@@ -149,7 +142,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(445, 510);
+            this.btnUpdate.Location = new System.Drawing.Point(388, 532);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 29);
             this.btnUpdate.TabIndex = 11;
@@ -159,7 +152,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(612, 510);
+            this.btnDelete.Location = new System.Drawing.Point(586, 532);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 29);
             this.btnDelete.TabIndex = 12;
@@ -169,7 +162,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(114, 510);
+            this.btnLoad.Location = new System.Drawing.Point(40, 532);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(94, 29);
             this.btnLoad.TabIndex = 13;
@@ -179,7 +172,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(762, 510);
+            this.button2.Location = new System.Drawing.Point(598, 227);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 29);
             this.button2.TabIndex = 15;
@@ -187,17 +180,27 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // cbCate
+            // 
+            this.cbCate.DropDownHeight = 90;
+            this.cbCate.FormattingEnabled = true;
+            this.cbCate.IntegralHeight = false;
+            this.cbCate.Location = new System.Drawing.Point(529, 176);
+            this.cbCate.Name = "cbCate";
+            this.cbCate.Size = new System.Drawing.Size(181, 28);
+            this.cbCate.TabIndex = 16;
+            // 
             // FrmSubcategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 606);
+            this.ClientSize = new System.Drawing.Size(727, 606);
+            this.Controls.Add(this.cbCate);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
-            this.Controls.Add(this.txtCateID);
             this.Controls.Add(this.txtDes);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtID);
@@ -227,11 +230,11 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtDes;
-        private System.Windows.Forms.TextBox txtCateID;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbCate;
     }
 }

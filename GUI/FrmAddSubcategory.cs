@@ -17,6 +17,7 @@ namespace GUI
         {
             InitializeComponent();
         }
+        ICategoryRepository categoryRepository = new CategoryRepository();
         ISubCategoryRepository subCategoryRepository = new SubCategoryRepository();
         private void label2_Click(object sender, EventArgs e)
         {
@@ -55,12 +56,14 @@ namespace GUI
         ManagePersonalExpensesContext context = new ManagePersonalExpensesContext();
         private void FrmAddSubcategory_Load(object sender, EventArgs e)
         {
-            var cb = from c in context.Categories
-                     select c ;
-                cbCate.DataSource = cb.ToList();
-                cbCate.DisplayMember = "CategoryId";
-                cbCate.ValueMember = "CategoryId";
            
+
+            var cate = categoryRepository.GetAll();
+            cbCate.DataSource = cate;
+            cbCate.DisplayMember = "Name";
+            cbCate.ValueMember = "CategoryId";
+
+
         }
     }
 }
