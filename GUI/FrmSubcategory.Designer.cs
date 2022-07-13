@@ -41,8 +41,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.cbCate = new System.Windows.Forms.ComboBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,7 +131,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(205, 532);
+            this.btnInsert.Location = new System.Drawing.Point(220, 532);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(94, 29);
             this.btnInsert.TabIndex = 10;
@@ -142,7 +141,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(388, 532);
+            this.btnUpdate.Location = new System.Drawing.Point(404, 532);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 29);
             this.btnUpdate.TabIndex = 11;
@@ -170,33 +169,22 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // button2
+            // cbCategory
             // 
-            this.button2.Location = new System.Drawing.Point(598, 227);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 29);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Add Category";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // cbCate
-            // 
-            this.cbCate.DropDownHeight = 90;
-            this.cbCate.FormattingEnabled = true;
-            this.cbCate.IntegralHeight = false;
-            this.cbCate.Location = new System.Drawing.Point(529, 176);
-            this.cbCate.Name = "cbCate";
-            this.cbCate.Size = new System.Drawing.Size(181, 28);
-            this.cbCate.TabIndex = 16;
+            this.cbCategory.DropDownHeight = 90;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.IntegralHeight = false;
+            this.cbCategory.Location = new System.Drawing.Point(529, 176);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(181, 28);
+            this.cbCategory.TabIndex = 16;
             // 
             // FrmSubcategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 606);
-            this.Controls.Add(this.cbCate);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -234,7 +222,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox cbCate;
+        private System.Windows.Forms.ComboBox cbCategory;
     }
 }

@@ -37,16 +37,16 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
             this.rdMale = new System.Windows.Forms.RadioButton();
             this.rdFemale = new System.Windows.Forms.RadioButton();
+            this.btnChangePW = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(362, 24);
+            this.label1.Location = new System.Drawing.Point(141, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 33);
             this.label1.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(260, 82);
+            this.label2.Location = new System.Drawing.Point(38, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 20);
             this.label2.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(260, 170);
+            this.label3.Location = new System.Drawing.Point(38, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(260, 312);
+            this.label4.Location = new System.Drawing.Point(44, 308);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 3;
@@ -86,14 +86,14 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(404, 79);
+            this.txtName.Location = new System.Drawing.Point(203, 95);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(219, 27);
             this.txtName.TabIndex = 4;
             // 
             // txtAccount
             // 
-            this.txtAccount.Location = new System.Drawing.Point(404, 167);
+            this.txtAccount.Location = new System.Drawing.Point(203, 163);
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.ReadOnly = true;
             this.txtAccount.Size = new System.Drawing.Size(219, 27);
@@ -102,7 +102,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(328, 378);
+            this.btnUpdate.Location = new System.Drawing.Point(203, 378);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 29);
             this.btnUpdate.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(474, 378);
+            this.btnClose.Location = new System.Drawing.Point(328, 378);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(94, 29);
             this.btnClose.TabIndex = 8;
@@ -124,24 +124,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(260, 248);
+            this.label5.Location = new System.Drawing.Point(40, 244);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 20);
             this.label5.TabIndex = 9;
             this.label5.Text = "Password ";
             // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(404, 245);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.ReadOnly = true;
-            this.txtPass.Size = new System.Drawing.Size(219, 27);
-            this.txtPass.TabIndex = 10;
-            // 
             // rdMale
             // 
             this.rdMale.AutoSize = true;
-            this.rdMale.Location = new System.Drawing.Point(404, 308);
+            this.rdMale.Location = new System.Drawing.Point(203, 308);
             this.rdMale.Name = "rdMale";
             this.rdMale.Size = new System.Drawing.Size(63, 24);
             this.rdMale.TabIndex = 11;
@@ -153,7 +145,7 @@
             // rdFemale
             // 
             this.rdFemale.AutoSize = true;
-            this.rdFemale.Location = new System.Drawing.Point(527, 308);
+            this.rdFemale.Location = new System.Drawing.Point(344, 306);
             this.rdFemale.Name = "rdFemale";
             this.rdFemale.Size = new System.Drawing.Size(78, 24);
             this.rdFemale.TabIndex = 12;
@@ -161,14 +153,24 @@
             this.rdFemale.Text = "Female";
             this.rdFemale.UseVisualStyleBackColor = true;
             // 
+            // btnChangePW
+            // 
+            this.btnChangePW.Location = new System.Drawing.Point(203, 235);
+            this.btnChangePW.Name = "btnChangePW";
+            this.btnChangePW.Size = new System.Drawing.Size(219, 29);
+            this.btnChangePW.TabIndex = 13;
+            this.btnChangePW.Text = "Change";
+            this.btnChangePW.UseVisualStyleBackColor = true;
+            this.btnChangePW.Click += new System.EventHandler(this.btnChangePW_Click);
+            // 
             // FrmProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 450);
+            this.ClientSize = new System.Drawing.Size(467, 450);
+            this.Controls.Add(this.btnChangePW);
             this.Controls.Add(this.rdFemale);
             this.Controls.Add(this.rdMale);
-            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnUpdate);
@@ -197,8 +199,8 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.RadioButton rdMale;
         private System.Windows.Forms.RadioButton rdFemale;
+        private System.Windows.Forms.Button btnChangePW;
     }
 }

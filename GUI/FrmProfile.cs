@@ -43,11 +43,11 @@ namespace GUI
         {
           
 
-            var result = context.Users.SingleOrDefault(x => x.UserId ==3 );
+            var result = context.Users.SingleOrDefault(x => x.UserId == Session.id);
             txtName.Text = result.Fullname;
 
             txtAccount.Text = result.Account;
-            txtPass.Text = result.Password;
+            
             if(result.Gender )
             {
                 rdMale.Checked = true;
@@ -77,7 +77,7 @@ namespace GUI
                 if (user != null)
                 {
                     user.Fullname = txtName.Text;
-                   // user.Gender = txtGen.Created;
+                    //user.Gender = txtGen.Created;
 
                     int count = context.SaveChanges();
                     if (count > 0)
@@ -98,6 +98,12 @@ namespace GUI
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnChangePW_Click(object sender, EventArgs e)
+        {
+            FrmChangepassword frmChangepassword = new FrmChangepassword();
+            frmChangepassword.Show();
         }
     }
 }

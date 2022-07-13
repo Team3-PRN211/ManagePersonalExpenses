@@ -33,9 +33,11 @@ namespace GUI
                 {
                     c.Name = txtName.Text;
                     c.Description = txtDes.Text;
-                    c.CategoryId = (int)cbCate.SelectedValue;
+                    var v = cbCategory.SelectedValue;
+                    var id = context.Categories.SingleOrDefault(x => x.Name.Equals(v.ToString())).CategoryId;
+                    c.CategoryId = id;
                     subCategoryRepository.Update(c);
-                    MessageBox.Show("Success");
+                    MessageBox.Show("SubCategory has been Update Successfully!");
                     load();
                 }
             }
@@ -44,6 +46,9 @@ namespace GUI
                 MessageBox.Show(ex.Message, "Update");
             }
         }
+
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -71,7 +76,7 @@ namespace GUI
             load();
         }
 
-        private void load()
+        public void load()
         {
             var subcategory = (from item in subCategoryRepository.GetAll()
                                join c in categoryRepository.GetAll() on item.CategoryId equals c.CategoryId
@@ -87,13 +92,14 @@ namespace GUI
             txtDes.DataBindings.Clear();
             txtDes.DataBindings.Add("Text", subcategory, "Description");
 
-            cbCate.DataBindings.Clear();
-            cbCate.DataBindings.Add("SelectedValue", subcategory, "Name");
+            cbCategory.DataBindings.Clear();
+            cbCategory.DataBindings.Add("SelectedValue", subcategory, "Category");
 
             var cate = categoryRepository.GetAll();
-            cbCate.DataSource = cate;
-            cbCate.DisplayMember = "Name";
-            cbCate.ValueMember = "CategoryId";
+            cbCategory.DataSource = cate;
+            cbCategory.DisplayMember = "Name";
+            cbCategory.ValueMember = "Name";
+            
 
 
         }
@@ -112,13 +118,13 @@ namespace GUI
                     int count = context.SaveChanges();
                     if (count > 0)
                     {
-                        MessageBox.Show("delete success");
+                        MessageBox.Show("SubCategory has been delete Successfully!");
                         load();
 
                     }
                     else
                     {
-                        MessageBox.Show("delete failed");
+                        MessageBox.Show("SubCategory has been delete Fail!");
 
                     }
                 }
@@ -139,8 +145,7 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmAddCategory frm = new FrmAddCategory();
-            frm.Show();
+           
         }
     }
 }

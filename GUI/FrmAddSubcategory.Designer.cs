@@ -40,6 +40,8 @@
             this.cbCate = new System.Windows.Forms.ComboBox();
             this.managePersonalExpensesContextBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.managePersonalExpensesContextBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.managePersonalExpensesContextBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.managePersonalExpensesContextBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +50,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(107, 94);
+            this.label2.Location = new System.Drawing.Point(69, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(107, 188);
+            this.label3.Location = new System.Drawing.Point(69, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 20);
             this.label3.TabIndex = 2;
@@ -69,7 +71,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(443, 94);
+            this.label4.Location = new System.Drawing.Point(69, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 20);
             this.label4.TabIndex = 3;
@@ -77,7 +79,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(272, 271);
+            this.btnAdd.Location = new System.Drawing.Point(392, 295);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 29);
             this.btnAdd.TabIndex = 4;
@@ -87,7 +89,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(532, 271);
+            this.btnCancel.Location = new System.Drawing.Point(530, 295);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(94, 29);
             this.btnCancel.TabIndex = 5;
@@ -97,23 +99,23 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(241, 94);
+            this.txtName.Location = new System.Drawing.Point(262, 88);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(125, 27);
+            this.txtName.Size = new System.Drawing.Size(224, 27);
             this.txtName.TabIndex = 6;
             // 
             // txtDes
             // 
-            this.txtDes.Location = new System.Drawing.Point(241, 188);
+            this.txtDes.Location = new System.Drawing.Point(262, 218);
             this.txtDes.Name = "txtDes";
-            this.txtDes.Size = new System.Drawing.Size(125, 27);
+            this.txtDes.Size = new System.Drawing.Size(224, 27);
             this.txtDes.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(321, 9);
+            this.label1.Location = new System.Drawing.Point(212, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 41);
             this.label1.TabIndex = 9;
@@ -121,11 +123,13 @@
             // 
             // cbCate
             // 
+            this.cbCate.DropDownHeight = 70;
             this.cbCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCate.FormattingEnabled = true;
-            this.cbCate.Location = new System.Drawing.Point(619, 94);
+            this.cbCate.IntegralHeight = false;
+            this.cbCate.Location = new System.Drawing.Point(262, 151);
             this.cbCate.Name = "cbCate";
-            this.cbCate.Size = new System.Drawing.Size(151, 28);
+            this.cbCate.Size = new System.Drawing.Size(224, 28);
             this.cbCate.TabIndex = 10;
             this.cbCate.SelectedIndexChanged += new System.EventHandler(this.cbCate_SelectedIndexChanged);
             // 
@@ -137,11 +141,33 @@
             // 
             this.managePersonalExpensesContextBindingSource1.DataSource = typeof(BusinessObject.Models.ManagePersonalExpensesContext);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(530, 151);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 29);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Add Category";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(262, 295);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(94, 29);
+            this.btnLoad.TabIndex = 17;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // FrmAddSubcategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 428);
+            this.ClientSize = new System.Drawing.Size(715, 428);
+            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.cbCate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDes);
@@ -173,5 +199,7 @@
         private System.Windows.Forms.ComboBox cbCate;
         private System.Windows.Forms.BindingSource managePersonalExpensesContextBindingSource;
         private System.Windows.Forms.BindingSource managePersonalExpensesContextBindingSource1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLoad;
     }
 }

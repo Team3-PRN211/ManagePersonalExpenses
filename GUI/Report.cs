@@ -23,7 +23,12 @@ namespace GUI
         private void Report_Load(object sender, EventArgs e)
         {
             cbTime.SelectedIndex = 0;
-            var total = recordRepository.GetAll().Where(r => r.Date.ToString("dd/MM/yyyy") == DateTime.UtcNow.Date.ToString("dd/MM/yyyy")).Sum(r => r.Money);
+
+
+            var total = recordRepository.GetAll()
+                .Where(r => r.Date.ToString("dd/MM/yyyy") == DateTime.Now.Date.ToString("dd/MM/yyyy"))
+                .Where(r => r.UserId == Session.id)
+                .Sum(r => r.Money);
 
         }
 
@@ -31,12 +36,16 @@ namespace GUI
         {
             if (cbTime.SelectedIndex == 0)
             {
-                var total = recordRepository.GetAll().Where(r => r.Date.ToString("dd/MM/yyyy") == DateTime.UtcNow.Date.ToString("dd/MM/yyyy")).Sum(r => r.Money);
+
+                var total = recordRepository.GetAll()
+               .Where(r => r.Date.ToString("dd/MM/yyyy") == DateTime.Now.Date.ToString("dd/MM/yyyy"))
+               .Where(r => r.UserId == Session.id)
+               .Sum(r => r.Money);
                 txtTotal.Text = total.ToString();
                 var records = (from r in recordRepository.GetAll()
                                join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                                join c in categoryRepository.GetAll() on s.CategoryId equals c.CategoryId
-                               where r.Date.ToString("dd/MM/yyyy") == DateTime.UtcNow.Date.ToString("dd/MM/yyyy")
+                               where r.Date.ToString("dd/MM/yyyy") == DateTime.UtcNow.Date.ToString("dd/MM/yyyy") && r.UserId == Session.id
                                group r by c.Name into a
                                select new
                                {
@@ -50,12 +59,14 @@ namespace GUI
             }
             if (cbTime.SelectedIndex == 1)
             {
-                var total = recordRepository.GetAll().Where(r => r.Date.Month == DateTime.Now.Month).Sum(r => r.Money);
+                var total = recordRepository.GetAll().Where(r => r.Date.Month == DateTime.Now.Month)
+                    .Where(r => r.UserId == Session.id)
+                    .Sum(r => r.Money);
                 txtTotal.Text = total.ToString();
                 var records = (from r in recordRepository.GetAll()
                                join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                                join c in categoryRepository.GetAll() on s.CategoryId equals c.CategoryId
-                               where r.Date.Month == DateTime.Now.Month
+                               where r.Date.Month == DateTime.Now.Month && r.UserId == Session.id
                                group r by c.Name into a
                                select new
                                {
@@ -69,12 +80,14 @@ namespace GUI
             }
             if (cbTime.SelectedIndex == 2)
             {
-                var total = recordRepository.GetAll().Where(r => r.Date.Year == DateTime.Now.Year).Sum(r => r.Money);
+                var total = recordRepository.GetAll().Where(r => r.Date.Year == DateTime.Now.Year)
+                    .Where(r => r.UserId == Session.id)
+                    .Sum(r => r.Money);
                 txtTotal.Text = total.ToString();
                 var records = (from r in recordRepository.GetAll()
                                join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                                join c in categoryRepository.GetAll() on s.CategoryId equals c.CategoryId
-                               where r.Date.Year == DateTime.Now.Year
+                               where r.Date.Year == DateTime.Now.Year && r.UserId == Session.id
                                group r by c.Name into a
                                select new
                                {
@@ -86,6 +99,11 @@ namespace GUI
 
                 dgvReport.DataSource = records;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

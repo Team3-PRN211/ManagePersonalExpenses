@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvCategory = new System.Windows.Forms.DataGridView();
             this.lbCategory = new System.Windows.Forms.Label();
             this.lbCategoryId = new System.Windows.Forms.Label();
             this.lbCategoryName = new System.Windows.Forms.Label();
@@ -40,26 +39,15 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.dgvCategory = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvCategory
-            // 
-            this.dgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategory.Location = new System.Drawing.Point(54, 244);
-            this.dgvCategory.Name = "dgvCategory";
-            this.dgvCategory.RowHeadersWidth = 51;
-            this.dgvCategory.RowTemplate.Height = 29;
-            this.dgvCategory.Size = new System.Drawing.Size(698, 194);
-            this.dgvCategory.TabIndex = 0;
-            this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellContentClick);
             // 
             // lbCategory
             // 
             this.lbCategory.AutoSize = true;
             this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lbCategory.Location = new System.Drawing.Point(222, 18);
+            this.lbCategory.Location = new System.Drawing.Point(168, 18);
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(331, 41);
             this.lbCategory.TabIndex = 1;
@@ -79,7 +67,7 @@
             // 
             this.lbCategoryName.AutoSize = true;
             this.lbCategoryName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbCategoryName.Location = new System.Drawing.Point(54, 158);
+            this.lbCategoryName.Location = new System.Drawing.Point(54, 154);
             this.lbCategoryName.Name = "lbCategoryName";
             this.lbCategoryName.Size = new System.Drawing.Size(131, 23);
             this.lbCategoryName.TabIndex = 3;
@@ -89,7 +77,7 @@
             // 
             this.lbDescription.AutoSize = true;
             this.lbDescription.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbDescription.Location = new System.Drawing.Point(440, 90);
+            this.lbDescription.Location = new System.Drawing.Point(54, 217);
             this.lbDescription.Name = "lbDescription";
             this.lbDescription.Size = new System.Drawing.Size(102, 23);
             this.lbDescription.TabIndex = 4;
@@ -99,26 +87,26 @@
             // 
             this.txtId.Location = new System.Drawing.Point(216, 89);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(171, 27);
+            this.txtId.Size = new System.Drawing.Size(215, 27);
             this.txtId.TabIndex = 5;
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(216, 154);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(171, 27);
+            this.txtName.Size = new System.Drawing.Size(215, 27);
             this.txtName.TabIndex = 6;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(581, 89);
+            this.txtDescription.Location = new System.Drawing.Point(216, 213);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(171, 27);
+            this.txtDescription.Size = new System.Drawing.Size(215, 27);
             this.txtDescription.TabIndex = 7;
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(246, 461);
+            this.btnInsert.Location = new System.Drawing.Point(206, 461);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(94, 29);
             this.btnInsert.TabIndex = 8;
@@ -128,7 +116,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(440, 461);
+            this.btnUpdate.Location = new System.Drawing.Point(363, 461);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 29);
             this.btnUpdate.TabIndex = 9;
@@ -138,7 +126,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(623, 461);
+            this.btnDelete.Location = new System.Drawing.Point(521, 461);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 29);
             this.btnDelete.TabIndex = 10;
@@ -148,7 +136,7 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(70, 461);
+            this.btnLoad.Location = new System.Drawing.Point(54, 461);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(94, 29);
             this.btnLoad.TabIndex = 11;
@@ -156,11 +144,23 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // dgvCategory
+            // 
+            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.Location = new System.Drawing.Point(54, 258);
+            this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.RowHeadersWidth = 51;
+            this.dgvCategory.RowTemplate.Height = 29;
+            this.dgvCategory.Size = new System.Drawing.Size(561, 188);
+            this.dgvCategory.TabIndex = 12;
+            this.dgvCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
             // FrmCategories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 514);
+            this.ClientSize = new System.Drawing.Size(670, 514);
+            this.Controls.Add(this.dgvCategory);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -172,7 +172,6 @@
             this.Controls.Add(this.lbCategoryName);
             this.Controls.Add(this.lbCategoryId);
             this.Controls.Add(this.lbCategory);
-            this.Controls.Add(this.dgvCategory);
             this.Name = "FrmCategories";
             this.Text = "FrmCategories";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -183,8 +182,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvCategory;
         private System.Windows.Forms.Label lbCategory;
         private System.Windows.Forms.Label lbCategoryId;
         private System.Windows.Forms.Label lbCategoryName;
@@ -196,5 +193,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.DataGridView dgvCategory;
     }
 }
