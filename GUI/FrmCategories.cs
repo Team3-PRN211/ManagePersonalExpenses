@@ -54,7 +54,7 @@ namespace GUI
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-
+            this.Close();
             FrmAddCategory frmAddCategory = new FrmAddCategory();
             frmAddCategory.Show();
             
