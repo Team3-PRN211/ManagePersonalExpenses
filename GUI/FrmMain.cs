@@ -26,7 +26,7 @@ namespace GUI
 
         private void subCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmCategories frmCategories  = new FrmCategories();
+            FrmSubcategory frmCategories  = new FrmSubcategory();
             frmCategories.Show();
         }
 

@@ -45,8 +45,10 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Close();
             FrmAddSubcategory add = new FrmAddSubcategory();
             add.Show();
+           
         }
 
         private void label2_Click(object sender, EventArgs e)

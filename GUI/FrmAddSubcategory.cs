@@ -46,7 +46,13 @@ namespace GUI
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e) => Close();
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmSubcategory frm = new FrmSubcategory();
+            frm.Show();
+        }
+
 
         private void cbCate_SelectedIndexChanged(object sender, EventArgs e)
         {
