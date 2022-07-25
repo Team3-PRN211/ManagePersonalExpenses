@@ -39,7 +39,7 @@ namespace GUI
                     SubCategoryId = (int)cbCategory.SelectedValue,
                     TypeId = (int)cbType.SelectedValue,
                     Description = txtDescription.Text,
-                    UserId = 2
+                    UserId = Session.id
                 };
                 if (!InsertOrUpdate)
                 {
@@ -56,7 +56,7 @@ namespace GUI
                     record.SubCategoryId = (int)cbCategory.SelectedValue;
                     record.TypeId = (int)cbType.SelectedValue;
                     record.Description = txtDescription.Text;
-                    record.UserId = 2;
+                    record.UserId = Session.id;
                     recordRepository.Update(record);
                     dtpDate.Value = DateTime.Now;
                     this.DialogResult = DialogResult.OK;

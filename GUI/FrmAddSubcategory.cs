@@ -17,6 +17,7 @@ namespace GUI
         {
             InitializeComponent();
         }
+        ICategoryRepository categoryRepository = new CategoryRepository();
         ISubCategoryRepository subCategoryRepository = new SubCategoryRepository();
         private void label2_Click(object sender, EventArgs e)
         {
@@ -36,8 +37,9 @@ namespace GUI
 
                 };
                 subCategoryRepository.InsertSubCategory(subcategory);
-
-                MessageBox.Show("Insert success");
+                FrmSubcategory frm = new FrmSubcategory();
+                frm.load();
+                MessageBox.Show("SubCategory has been create Successfully!");
 
             }
             catch (Exception ex)
@@ -59,14 +61,32 @@ namespace GUI
 
         }
         ManagePersonalExpensesContext context = new ManagePersonalExpensesContext();
-        private void FrmAddSubcategory_Load(object sender, EventArgs e)
+        public void FrmAddSubcategory_Load(object sender, EventArgs e)
         {
-            var cb = from c in context.Categories
-                     select c ;
-                cbCate.DataSource = cb.ToList();
-                cbCate.DisplayMember = "CategoryId";
-                cbCate.ValueMember = "CategoryId";
-           
+
+
+            LoadData();
+
+
+        }
+
+        public void LoadData()
+        {
+            var cate = categoryRepository.GetAll();
+            cbCate.DataSource = cate;
+            cbCate.DisplayMember = "Name";
+            cbCate.ValueMember = "CategoryId";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmAddCategory frm = new FrmAddCategory();
+            frm.Show();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

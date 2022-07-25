@@ -19,21 +19,25 @@ namespace GUI
             InitializeComponent();
         }
         ISubCategoryRepository subCategoryRepository = new SubCategoryRepository();
+        ICategoryRepository categoryRepository = new CategoryRepository();
         ManagePersonalExpensesContext context = new ManagePersonalExpensesContext();
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             try
             {
-                SubCategory subcategory = new SubCategory { SubCategoryId = int.Parse(txtID.Text) };
-                SubCategory c = subCategoryRepository.GetSubCategoryById(subcategory.SubCategoryId);
+                
+                SubCategory c = subCategoryRepository.GetSubCategoryById(int.Parse(txtID.Text));
                 if (c != null)
                 {
                     c.Name = txtName.Text;
                     c.Description = txtDes.Text;
-                    c.CategoryId = int.Parse(txtCateID.Text);
+                    var v = cbCategory.SelectedValue;
+                    var id = context.Categories.SingleOrDefault(x => x.Name.Equals(v.ToString())).CategoryId;
+                    c.CategoryId = id;
                     subCategoryRepository.Update(c);
-                    MessageBox.Show("Success");
+                    MessageBox.Show("SubCategory has been Update Successfully!");
                     load();
                 }
             }
@@ -42,6 +46,9 @@ namespace GUI
                 MessageBox.Show(ex.Message, "Update");
             }
         }
+
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -71,10 +78,11 @@ namespace GUI
             load();
         }
 
-        private void load()
+        public void load()
         {
             var subcategory = (from item in subCategoryRepository.GetAll()
-                              select new { item.SubCategoryId, item.Name, item.Description , item.CategoryId })
+                               join c in categoryRepository.GetAll() on item.CategoryId equals c.CategoryId
+                              select new { item.SubCategoryId, item.Name, item.Description,Category = c.Name})
                             .ToList();
             dgView.DataSource = subcategory;
             txtID.DataBindings.Clear();
@@ -86,8 +94,16 @@ namespace GUI
             txtDes.DataBindings.Clear();
             txtDes.DataBindings.Add("Text", subcategory, "Description");
 
-            txtCateID.DataBindings.Clear();
-            txtCateID.DataBindings.Add("Text", subcategory, "CategoryId");
+            cbCategory.DataBindings.Clear();
+            cbCategory.DataBindings.Add("SelectedValue", subcategory, "Category");
+
+            var cate = categoryRepository.GetAll();
+            cbCategory.DataSource = cate;
+            cbCategory.DisplayMember = "Name";
+            cbCategory.ValueMember = "Name";
+            
+
+
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -104,13 +120,13 @@ namespace GUI
                     int count = context.SaveChanges();
                     if (count > 0)
                     {
-                        MessageBox.Show("delete success");
+                        MessageBox.Show("SubCategory has been delete Successfully!");
                         load();
 
                     }
                     else
                     {
-                        MessageBox.Show("delete failed");
+                        MessageBox.Show("SubCategory has been delete Fail!");
 
                     }
                 }
@@ -131,8 +147,12 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmAddCategory frm = new FrmAddCategory();
-            frm.Show();
+           
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

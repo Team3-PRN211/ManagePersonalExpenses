@@ -34,8 +34,15 @@ namespace GUI
                    
                 };
                 categoryRepository.InsertCategory(category);
-                
-                MessageBox.Show("Insert success");
+                FrmCategories frmCategories = new FrmCategories();
+                frmCategories.loadData();
+                FrmSubcategory s = new FrmSubcategory();
+                s.load();
+                FrmAddSubcategory f = new FrmAddSubcategory();
+                f.LoadData();
+                MessageBox.Show("Category has been create Successfully!");
+               
+               
 
             }
             catch (Exception ex)

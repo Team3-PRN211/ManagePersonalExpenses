@@ -39,18 +39,20 @@
             // lbName
             // 
             this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbName.Location = new System.Drawing.Point(46, 51);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(114, 20);
+            this.lbName.Size = new System.Drawing.Size(118, 20);
             this.lbName.TabIndex = 1;
             this.lbName.Text = "CateogoryName";
             // 
             // lbDescription
             // 
             this.lbDescription.AutoSize = true;
+            this.lbDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbDescription.Location = new System.Drawing.Point(46, 123);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(82, 20);
+            this.lbDescription.Size = new System.Drawing.Size(85, 20);
             this.lbDescription.TabIndex = 2;
             this.lbDescription.Text = "Description";
             // 
@@ -72,10 +74,11 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(177, 204);
+            this.btnInsert.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnInsert.Location = new System.Drawing.Point(186, 204);
             this.btnInsert.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(75, 25);
+            this.btnInsert.Size = new System.Drawing.Size(90, 25);
             this.btnInsert.TabIndex = 6;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
@@ -83,10 +86,11 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(333, 204);
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancel.Location = new System.Drawing.Point(325, 204);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 25);
+            this.btnCancel.Size = new System.Drawing.Size(84, 25);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;

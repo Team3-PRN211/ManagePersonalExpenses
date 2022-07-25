@@ -36,6 +36,7 @@ namespace GUI
             var records = (from r in recordRepository.GetAll()
                            join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                            join t in typeRepository.GetAll() on r.TypeId equals t.TypeId
+                           where r.UserId == Session.id
                            select new {
                                r.RecordId,
                                r.Money,
@@ -135,7 +136,7 @@ namespace GUI
             var records = (from r in recordRepository.GetAll()
                            join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                            join t in typeRepository.GetAll() on r.TypeId equals t.TypeId
-                           where r.SubCategoryId == (int)cbCategory.SelectedValue
+                           where r.SubCategoryId == (int)cbCategory.SelectedValue &&  r.UserId == Session.id
                            select new
                            {
                                r.RecordId,
@@ -162,7 +163,7 @@ namespace GUI
             var records = (from r in recordRepository.GetAll()
                            join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                            join t in typeRepository.GetAll() on r.TypeId equals t.TypeId
-                           where r.TypeId == (int) cbType.SelectedValue
+                           where r.TypeId == (int) cbType.SelectedValue && r.UserId == Session.id
                            select new
                            {
                                r.RecordId,
@@ -182,7 +183,7 @@ namespace GUI
             var records = (from r in recordRepository.GetAll()
                            join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                            join t in typeRepository.GetAll() on r.TypeId equals t.TypeId
-                           where s.Name.ToLower().Contains(txtSearch.Text.ToLower())
+                           where s.Name.ToLower().Contains(txtSearch.Text.ToLower()) && r.UserId == Session.id
                            select new
                            {
                                r.RecordId,
@@ -202,7 +203,7 @@ namespace GUI
             var records = (from r in recordRepository.GetAll()
                            join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                            join t in typeRepository.GetAll() on r.TypeId equals t.TypeId
-                           where r.Date >=  dtpStartTime.Value && r.Date <= dtpEndTime.Value
+                           where r.Date >=  dtpStartTime.Value && r.Date <= dtpEndTime.Value && r.UserId == Session.id
                            select new
                            {
                                r.RecordId,
@@ -241,6 +242,7 @@ namespace GUI
                 var records = (from r in recordRepository.GetAll()
                                join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                                join t in typeRepository.GetAll() on r.TypeId equals t.TypeId
+                               where r.UserId == Session.id
                                orderby r.Money ascending
                                select new
                                {
@@ -258,6 +260,7 @@ namespace GUI
                 var records = (from r in recordRepository.GetAll()
                                join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                                join t in typeRepository.GetAll() on r.TypeId equals t.TypeId
+                               where r.UserId == Session.id
                                orderby r.Money descending
                                select new
                                {
@@ -289,6 +292,7 @@ namespace GUI
                 var records = (from r in recordRepository.GetAll()
                                join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                                join t in typeRepository.GetAll() on r.TypeId equals t.TypeId
+                               where r.UserId == Session.id
                                orderby r.Date ascending
                                select new
                                {
@@ -306,6 +310,7 @@ namespace GUI
                 var records = (from r in recordRepository.GetAll()
                                join s in subCategoryRepository.GetAll() on r.SubCategoryId equals s.SubCategoryId
                                join t in typeRepository.GetAll() on r.TypeId equals t.TypeId
+                               where r.UserId == Session.id
                                orderby r.Date descending
                                select new
                                {

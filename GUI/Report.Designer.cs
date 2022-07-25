@@ -39,11 +39,11 @@
             // dgvReport
             // 
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReport.Location = new System.Drawing.Point(12, 124);
+            this.dgvReport.Location = new System.Drawing.Point(12, 108);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.RowHeadersWidth = 51;
             this.dgvReport.RowTemplate.Height = 29;
-            this.dgvReport.Size = new System.Drawing.Size(564, 205);
+            this.dgvReport.Size = new System.Drawing.Size(564, 221);
             this.dgvReport.TabIndex = 0;
             // 
             // label1
@@ -76,11 +76,13 @@
             this.label2.Size = new System.Drawing.Size(42, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Total";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtTotal
             // 
             this.txtTotal.Location = new System.Drawing.Point(408, 37);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(168, 27);
             this.txtTotal.TabIndex = 5;
             // 

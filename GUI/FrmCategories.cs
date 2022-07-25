@@ -26,7 +26,7 @@ namespace GUI
             loadData();
         }
 
-        private void loadData()
+        public void loadData()
         {
             var categories = (from item in categoryRepository.GetAll()
                               select new { item.CategoryId, item.Name,item.Description })
@@ -77,13 +77,18 @@ namespace GUI
 
                 if(c != null)
                 {
-                    categoryRepository.DeleteCategory(c);
-                    loadData();
-                    MessageBox.Show("Success");
+                    DialogResult dialogResult = MessageBox.Show("Do you want to delete : ", "Confirmation", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        categoryRepository.DeleteCategory(c);
+                        loadData();
+                        MessageBox.Show("Category has been delete Successfully!");
+                    }
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("Category has been delete Fail!");
                 }
 
             }
@@ -106,7 +111,7 @@ namespace GUI
                     c.Name = txtName.Text;
                     c.Description = txtDescription.Text;
                     categoryRepository.Update(c);
-                    MessageBox.Show("Sucess");
+                    MessageBox.Show("Category has been update Successfully!");
                     loadData();
                 }
             }
@@ -114,6 +119,11 @@ namespace GUI
             {
                 MessageBox.Show(ex.Message, "Update");
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
